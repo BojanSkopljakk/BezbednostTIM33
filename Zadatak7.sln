@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.34114.132
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zadatak7", "Zadatak7\Zadatak7.csproj", "{30F4EB51-6032-403F-A66C-03AAD2B5104E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Replikator", "Zadatak7\Replikator.csproj", "{30F4EB51-6032-403F-A66C-03AAD2B5104E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{AEAA28DF-3CF7-4BA3-944A-4321E4B9B3CD}"
 EndProject
