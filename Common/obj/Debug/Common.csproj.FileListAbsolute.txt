@@ -1,0 +1,5 @@
+C:\Users\bojan\source\repos\BezbednostTIM33\Common\bin\Debug\Common.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\Common\bin\Debug\Common.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\Common\obj\Debug\Common.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\Common\obj\Debug\Common.pdb

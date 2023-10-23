@@ -1,0 +1,10 @@
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\bin\Debug\AGS Sekundar.exe.config
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\bin\Debug\AGS Sekundar.exe
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\bin\Debug\AGS Sekundar.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\bin\Debug\Common.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\bin\Debug\Common.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\obj\Debug\AGS Sekundar.csproj.AssemblyReference.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\obj\Debug\AGS Sekundar.csproj.CoreCompileInputs.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\obj\Debug\AGS Sekundar.csproj.CopyComplete
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\obj\Debug\AGS Sekundar.exe
+C:\Users\bojan\source\repos\BezbednostTIM33\AGS Sekundar\obj\Debug\AGS Sekundar.pdb

@@ -16,6 +16,12 @@ namespace Client
                 new ChannelFactory<Interface1>("ServiceName");
 
             Interface1 proxy = channel.CreateChannel();
+
+            Console.Write("Unesite poruku: ");
+            string text = Console.ReadLine();
+            string odgovor = proxy.Ispisi(text);
+
+            Console.WriteLine(odgovor);
         }
     }
 }

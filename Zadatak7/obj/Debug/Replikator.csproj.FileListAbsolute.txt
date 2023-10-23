@@ -1,0 +1,10 @@
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\bin\Debug\Zadatak7.exe.config
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\bin\Debug\Zadatak7.exe
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\bin\Debug\Zadatak7.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\obj\Debug\Replikator.csproj.CoreCompileInputs.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\obj\Debug\Zadatak7.exe
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\obj\Debug\Zadatak7.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\bin\Debug\Common.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\bin\Debug\Common.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\obj\Debug\Replikator.csproj.AssemblyReference.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\Zadatak7\obj\Debug\Replikator.csproj.CopyComplete
