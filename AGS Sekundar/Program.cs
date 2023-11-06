@@ -17,7 +17,7 @@ namespace AGS_Sekundar
         {
 			string srvCertCN = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
 			NetTcpBinding binding = new NetTcpBinding();
-			string address = "net.tcp://localhost:9999/SecurityService";
+			string address = "net.tcp://localhost:15001/AGS_Sekundar";
 
 			binding.Security.Mode = SecurityMode.Transport;
 			binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
@@ -34,21 +34,13 @@ namespace AGS_Sekundar
 			///Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
 			host.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
 
-			try
-			{
-				host.Open();
-				Console.WriteLine("WCFService is started.\nPress <enter> to stop ...");
-				Console.ReadLine();
-			}
-			catch (Exception e)
-			{
-				Console.WriteLine("[ERROR] {0}", e.Message);
-				Console.WriteLine("[StackTrace] {0}", e.StackTrace);
-			}
-			finally
-			{
-				host.Close();
-			}
+			host.Open();
+
+			Console.WriteLine($"{nameof(Servis2)} is started.");
+			Console.WriteLine("Press <enter> to stop service...");
+
+			Console.ReadLine();
+
 		}
     }
 }

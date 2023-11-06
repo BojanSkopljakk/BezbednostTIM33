@@ -10,6 +10,8 @@ namespace Common
     [ServiceContract]
     public interface IAGSPrimar
     {
+        [OperationContract]
+        void AddAlarm();
 
     }
 }

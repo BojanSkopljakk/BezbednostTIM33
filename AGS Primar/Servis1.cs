@@ -14,5 +14,10 @@ namespace AGS_Primar
             Console.WriteLine("Communication established.");
 
         }
+
+        public void AddAlarm()
+        {
+
+        }
     }
 }

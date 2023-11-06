@@ -45,7 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClientProxy.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WCFClient.cs" />
@@ -57,10 +56,6 @@
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{aeaa28df-3cf7-4ba3-944a-4321e4b9b3cd}</Project>
       <Name>Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServiceContracts\ServiceContracts.csproj">
-      <Project>{bc0f3a9e-5c52-465b-9408-276c3c3e0251}</Project>
-      <Name>ServiceContracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
