@@ -1,0 +1,5 @@
+C:\Users\bojan\source\repos\BezbednostTIM33\ServiceContracts\bin\Debug\ServiceContracts.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\ServiceContracts\bin\Debug\ServiceContracts.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\ServiceContracts\obj\Debug\ServiceContracts.csproj.CoreCompileInputs.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\ServiceContracts\obj\Debug\ServiceContracts.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\ServiceContracts\obj\Debug\ServiceContracts.pdb

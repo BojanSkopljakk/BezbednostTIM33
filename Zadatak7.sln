@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGS Primar", "AGS Primar\AG
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AGS Sekundar", "AGS Sekundar\AGS Sekundar.csproj", "{F25F2829-7C07-49C2-9E19-847D4807F8AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServiceContracts", "ServiceContracts\ServiceContracts.csproj", "{BC0F3A9E-5C52-465B-9408-276C3C3E0251}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{F25F2829-7C07-49C2-9E19-847D4807F8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F25F2829-7C07-49C2-9E19-847D4807F8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F25F2829-7C07-49C2-9E19-847D4807F8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC0F3A9E-5C52-465B-9408-276C3C3E0251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC0F3A9E-5C52-465B-9408-276C3C3E0251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC0F3A9E-5C52-465B-9408-276C3C3E0251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC0F3A9E-5C52-465B-9408-276C3C3E0251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

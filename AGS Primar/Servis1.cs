@@ -7,12 +7,12 @@ using Common;
 
 namespace AGS_Primar
 {
-    class Servis1 : Interface1
+    class Servis1 : Interface1, IAGSPrimar
     {
-        public string Ispisi(string text)
+        public void Ispisi()
         {
-            Console.WriteLine($"Client connected: {text}");
-            return $"Service received: {text}";
+            Console.WriteLine("Communication established.");
+
         }
     }
 }

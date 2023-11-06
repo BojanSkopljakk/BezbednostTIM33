@@ -9,10 +9,9 @@ namespace AGS_Sekundar
 {
     class Servis2 : Interface1
     {
-        public string Ispisi(string text)
+        public void Ispisi()
         {
-            Console.WriteLine($"Client connected: {text}");
-            return $"Service received: {text}";
+            Console.WriteLine("Communication established.");
         }
     }
 }

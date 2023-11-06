@@ -11,6 +11,6 @@ namespace Common
     public interface Interface1
     {
         [OperationContract]
-        string Ispisi(string text);
+        void Ispisi();
     }
 }
