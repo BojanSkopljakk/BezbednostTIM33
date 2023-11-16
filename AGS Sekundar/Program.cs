@@ -20,7 +20,7 @@ namespace AGS_Sekundar
 			string address = "net.tcp://localhost:15001/AGS_Sekundar";
 
 			binding.Security.Mode = SecurityMode.Transport;
-			binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
+			binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
 			binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
 			ServiceHost host = new ServiceHost(typeof(Servis2));

@@ -15,12 +15,12 @@ namespace AGS_Primar
     {
         static void Main(string[] args)
         {
-            string srvCertCN = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+            string srvCertCN = "wcfclient";
             NetTcpBinding binding = new NetTcpBinding();
             string address = "net.tcp://localhost:9999/AGS_Primar";
 
             binding.Security.Mode = SecurityMode.Transport;
-            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
             binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
 			ServiceHost host = new ServiceHost(typeof(Servis1));
