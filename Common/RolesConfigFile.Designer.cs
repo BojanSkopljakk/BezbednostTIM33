@@ -61,7 +61,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to wcfadmin.
+        ///   Looks up a localized string similar to wcfservice.
         /// </summary>
         internal static string AlarmAdmin {
             get {
@@ -70,7 +70,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to wcfadmin.
+        ///   Looks up a localized string similar to wcfservice.
         /// </summary>
         internal static string AlarmGenerator {
             get {
@@ -79,7 +79,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to wcfclient wcfadmin.
+        ///   Looks up a localized string similar to wcfclient, wcfservice.
         /// </summary>
         internal static string Read {
             get {
