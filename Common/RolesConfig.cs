@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,7 +9,7 @@ namespace Common
 {
     public class RolesConfig
     {
-        static string path = @"~\..\..\..\..\SecurityManager\RolesConfigFile.resx";
+        static string path = @"~\..\..\..\..\Common\RolesConfigFile.resx";
         public static bool GetPermissions(string rolename, out string[] permissions)
         {
             permissions = new string[10];
