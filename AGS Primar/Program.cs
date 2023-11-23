@@ -15,7 +15,7 @@ namespace AGS_Primar
     {
         static void Main(string[] args)
         {
-            string srvCertCN = "wcfclient";
+            string srvCertCN = "WCFClient";
             NetTcpBinding binding = new NetTcpBinding();
             string address = "net.tcp://localhost:9999/AGS_Primar";
 
