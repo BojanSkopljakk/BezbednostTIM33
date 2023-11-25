@@ -8,6 +8,8 @@ using System.ServiceModel;
 using System.Security.Principal;
 using System.ServiceModel.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel.Description;
+using System.IdentityModel.Policy;
 
 namespace AGS_Primar
 {
@@ -23,7 +25,12 @@ namespace AGS_Primar
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
             binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
-			ServiceHost host = new ServiceHost(typeof(Servis1));
+            binding.MaxReceivedMessageSize = 1000000;
+            binding.OpenTimeout = TimeSpan.FromMinutes(2);
+            binding.SendTimeout = TimeSpan.FromMinutes(2);
+            binding.ReceiveTimeout = TimeSpan.FromMinutes(10);
+
+            ServiceHost host = new ServiceHost(typeof(Servis1));
 			host.AddServiceEndpoint(typeof(IAGSPrimar), binding, address);
 
 			host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
@@ -33,6 +40,15 @@ namespace AGS_Primar
 
 			///Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
 			host.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
+
+            // podesavamo da se koristi MyAuthorizationManager umesto ugradjenog
+            host.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
+
+            // podesavamo custom polisu, odnosno nas objekat principala
+            host.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
+            List<IAuthorizationPolicy> policies = new List<IAuthorizationPolicy>();
+            policies.Add(new CustomAuthorizationPolicy());
+            host.Authorization.ExternalAuthorizationPolicies = policies.AsReadOnly();
 
             host.Open();
 

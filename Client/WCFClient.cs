@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Permissions;
 using System.Security.Principal;
 using System.ServiceModel;
 using System.Text;
@@ -10,10 +11,12 @@ using Common;
 
 namespace Client
 {
-    public class WCFClient : ChannelFactory<Interface1>, Interface1, IDisposable
+	
+	public class WCFClient : ChannelFactory<Interface1>, Interface1, IDisposable
     {
-		Interface1 factory;
 
+		Interface1 factory;
+		
 		public WCFClient(NetTcpBinding binding, EndpointAddress address)
 			: base(binding, address)
 		{
@@ -27,6 +30,7 @@ namespace Client
 			this.Credentials.ClientCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, cltCertCN);
 
 			factory = this.CreateChannel();
+			
 		}
 
 		public void Ispisi()

@@ -12,6 +12,7 @@ namespace Client
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             /*ChannelFactory<Interface1> channel =
@@ -43,6 +44,11 @@ namespace Client
             string srvCertCN = "wcfservice";
 
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+
+            binding.MaxReceivedMessageSize = 1000000;
+            binding.OpenTimeout = TimeSpan.FromMinutes(2);
+            binding.SendTimeout = TimeSpan.FromMinutes(2);
+            binding.ReceiveTimeout = TimeSpan.FromMinutes(10);
 
             /// Use CertManager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
             X509Certificate2 srvCert = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);

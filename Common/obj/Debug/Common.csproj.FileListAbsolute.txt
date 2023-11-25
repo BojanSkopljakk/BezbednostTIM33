@@ -6,7 +6,6 @@ C:\Users\bojan\source\repos\BezbednostTIM33\Common\obj\Debug\Common.dll
 C:\Users\bojan\source\repos\BezbednostTIM33\Common\obj\Debug\Common.pdb
 C:\Users\Luka\Desktop\BezbednostTIM33\Common\bin\Debug\Common.dll
 C:\Users\Luka\Desktop\BezbednostTIM33\Common\bin\Debug\Common.pdb
-C:\Users\Luka\Desktop\BezbednostTIM33\Common\obj\Debug\Common.csproj.AssemblyReference.cache
 C:\Users\Luka\Desktop\BezbednostTIM33\Common\obj\Debug\Common.RolesConfigFile.resources
 C:\Users\Luka\Desktop\BezbednostTIM33\Common\obj\Debug\Common.csproj.GenerateResource.cache
 C:\Users\Luka\Desktop\BezbednostTIM33\Common\obj\Debug\Common.csproj.CoreCompileInputs.cache
