@@ -20,7 +20,7 @@ namespace Client
 
             // Interface1 proxy = channel.CreateChannel();
             NetTcpBinding binding = new NetTcpBinding();
-           // string address = "net.tcp://localhost:9999/SecurityService";
+            string address = "net.tcp://localhost:9999/AGS_Primar";
 
             /*binding.Security.Mode = SecurityMode.Transport;
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
@@ -41,19 +41,9 @@ namespace Client
 
               Console.WriteLine(odgovor);*/
 
-            string srvCertCN = "wcfservice";
-
-            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
-
-            binding.MaxReceivedMessageSize = 1000000;
-            binding.OpenTimeout = TimeSpan.FromMinutes(2);
-            binding.SendTimeout = TimeSpan.FromMinutes(2);
-            binding.ReceiveTimeout = TimeSpan.FromMinutes(10);
-
-            /// Use CertManager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
-            X509Certificate2 srvCert = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
-            EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:9999/AGS_Primar"),
-                                      new X509CertificateEndpointIdentity(srvCert));
+            binding.Security.Mode = SecurityMode.Transport;
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
+            binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
 
 

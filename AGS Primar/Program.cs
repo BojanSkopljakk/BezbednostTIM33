@@ -17,29 +17,28 @@ namespace AGS_Primar
     {
         static void Main(string[] args)
         {
-            string srvCertCN = "wcfclient";
+           // string srvCertCN = "wcfservice";
             NetTcpBinding binding = new NetTcpBinding();
             string address = "net.tcp://localhost:9999/AGS_Primar";
 
             binding.Security.Mode = SecurityMode.Transport;
-            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
-            binding.MaxReceivedMessageSize = 1000000;
-            binding.OpenTimeout = TimeSpan.FromMinutes(2);
-            binding.SendTimeout = TimeSpan.FromMinutes(2);
-            binding.ReceiveTimeout = TimeSpan.FromMinutes(10);
+
+
+        
 
             ServiceHost host = new ServiceHost(typeof(Servis1));
-			host.AddServiceEndpoint(typeof(IAGSPrimar), binding, address);
+			host.AddServiceEndpoint(typeof(Interface1), binding, address);
 
-			host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
+			//host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
 
-			///If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
-			host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
+			/////If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
+			//host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
 
-			///Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
-			host.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
+			/////Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
+			//host.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
 
             // podesavamo da se koristi MyAuthorizationManager umesto ugradjenog
             host.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();

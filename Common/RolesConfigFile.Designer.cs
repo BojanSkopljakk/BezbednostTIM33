@@ -19,7 +19,7 @@ namespace Common {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class RolesConfigFile {
@@ -63,27 +63,27 @@ namespace Common {
         /// <summary>
         ///   Looks up a localized string similar to Read, AlarmGenerator, AlarmAdmin.
         /// </summary>
-        internal static string AlarmAdmin {
+        internal static string Admin {
             get {
-                return ResourceManager.GetString("AlarmAdmin", resourceCulture);
+                return ResourceManager.GetString("Admin", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Read, AlarmGenerator.
         /// </summary>
-        internal static string AlarmGenerator {
+        internal static string Generator {
             get {
-                return ResourceManager.GetString("AlarmGenerator", resourceCulture);
+                return ResourceManager.GetString("Generator", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Looks up a localized string similar to Read.
         /// </summary>
-        internal static string AlarmReader {
+        internal static string Reader {
             get {
-                return ResourceManager.GetString("AlarmReader", resourceCulture);
+                return ResourceManager.GetString("Reader", resourceCulture);
             }
         }
     }
