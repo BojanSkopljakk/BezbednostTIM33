@@ -21,5 +21,8 @@ namespace Common
         [FaultContract(typeof(SecurityException))]
         void AcceptDelete();
 
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        void Ispisi();
     }
 }

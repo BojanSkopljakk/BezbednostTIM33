@@ -12,10 +12,10 @@ using Common;
 namespace Client
 {
 	
-	public class WCFClient : ChannelFactory<Interface1>, Interface1, IDisposable
+	public class WCFClient : ChannelFactory<IAGSPrimar>, IAGSPrimar, IDisposable
     {
 
-		Interface1 factory;
+		IAGSPrimar factory;
 		
 		public WCFClient(NetTcpBinding binding, string address)
 			: base(binding, address)
@@ -37,6 +37,24 @@ namespace Client
 			}
 		}
 
+
+
+        public void AddAlarm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeleteAlarm()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void AcceptDelete()
+        {
+            throw new NotImplementedException();
+        }
+
+
 		public void Dispose()
 		{
 			if (factory != null)
@@ -46,7 +64,5 @@ namespace Client
 
 			this.Close();
 		}
-
-
 	}
 }

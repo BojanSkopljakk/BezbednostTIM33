@@ -51,7 +51,6 @@
     <Compile Include="Formatter.cs" />
     <Compile Include="IAGSPrimar.cs" />
     <Compile Include="IAGSSekundar.cs" />
-    <Compile Include="Interface1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RolesConfig.cs" />
     <Compile Include="RolesConfigFile.Designer.cs">

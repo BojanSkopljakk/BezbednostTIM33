@@ -8,7 +8,7 @@ using Common;
 
 namespace AGS_Primar
 {
-    class Servis1 : Interface1, IAGSPrimar
+    public class Servis1 : IAGSPrimar
     {
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Read")]

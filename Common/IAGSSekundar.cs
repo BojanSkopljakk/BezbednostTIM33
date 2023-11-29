@@ -11,7 +11,8 @@ namespace Common
     public interface IAGSSekundar
     {
         [OperationContract]
-         void testMethod();
+        [FaultContract(typeof(SecurityException))]
+        void testMethod();
 
     }
 }

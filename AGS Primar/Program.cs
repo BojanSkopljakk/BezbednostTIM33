@@ -17,7 +17,7 @@ namespace AGS_Primar
     {
         static void Main(string[] args)
         {
-           // string srvCertCN = "wcfservice";
+            string srvCertCN = "wcfservice";
             NetTcpBinding binding = new NetTcpBinding();
             string address = "net.tcp://localhost:9999/AGS_Primar";
 
@@ -25,23 +25,32 @@ namespace AGS_Primar
             binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
             binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
-
-
-        
-
             ServiceHost host = new ServiceHost(typeof(Servis1));
-			host.AddServiceEndpoint(typeof(Interface1), binding, address);
+			host.AddServiceEndpoint(typeof(IAGSPrimar), binding, address);
 
-			//host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
 
-			/////If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
-			//host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
+            NetTcpBinding binding1 = new NetTcpBinding();
+            string address1 = "net.tcp://localhost:9999/Sertifikat";
 
-			/////Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
-			//host.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
+
+            binding1.Security.Mode = SecurityMode.Transport;
+            binding1.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+            binding1.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+
+            ServiceHost host1 = new ServiceHost(typeof(Servis1));
+            host1.AddServiceEndpoint(typeof(IAGSPrimar), binding1, address1);
+
+
+            host1.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
+
+            /////If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
+            host1.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
+
+            /////Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
+            host1.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
 
             // podesavamo da se koristi MyAuthorizationManager umesto ugradjenog
-            host.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
+            host1.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
 
             // podesavamo custom polisu, odnosno nas objekat principala
             host.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
@@ -53,6 +62,11 @@ namespace AGS_Primar
 
             Console.WriteLine($"{nameof(Servis1)} is started.");
             Console.WriteLine("Press <enter> to stop service...");
+
+            host1.Open();
+            Console.WriteLine("Drugi servis is started.");
+            Console.WriteLine("Press <enter> to stop service...");
+
 
             Console.ReadLine();
 

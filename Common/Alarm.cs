@@ -14,12 +14,13 @@ namespace Common
         private DateTime vremeGenerisanja;
         private string imeKlijenta;
         private string poruka;
-        //private TipRizika rizik;
-        public Alarm(DateTime vremeGenerisanja, string imeKlijenta, string poruka)
+        private int rizik;
+        public Alarm(DateTime vremeGenerisanja, string imeKlijenta, string poruka, int rizik)
         {
             this.VremeGenerisanja = vremeGenerisanja;
             this.ImeKlijenta = imeKlijenta;
             this.Poruka = poruka;
+            this.rizik = rizik;
         }
 
         [DataMember]
@@ -28,5 +29,7 @@ namespace Common
         public string ImeKlijenta { get => imeKlijenta; set => imeKlijenta = value; }
         [DataMember]
         public string Poruka { get => poruka; set => poruka = value; }
+        [DataMember]
+        public int Rizik { get => rizik; set => rizik = value; }
     }
 }

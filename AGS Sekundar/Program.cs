@@ -15,9 +15,9 @@ namespace AGS_Sekundar
     {
         static void Main(string[] args)
         {
-			string srvCertCN = Formatter.ParseName(WindowsIdentity.GetCurrent().Name);
+			string srvCertCN = "wcfservice2";
 			NetTcpBinding binding = new NetTcpBinding();
-			string address = "net.tcp://localhost:15001/AGS_Sekundar";
+			string address = "net.tcp://localhost:15001/Sertifikat";
 
 			binding.Security.Mode = SecurityMode.Transport;
 			binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;

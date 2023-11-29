@@ -8,13 +8,13 @@ C:\Users\bojan\source\repos\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.cspr
 C:\Users\bojan\source\repos\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.csproj.CopyComplete
 C:\Users\bojan\source\repos\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.exe
 C:\Users\bojan\source\repos\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.pdb
+C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\AGS Primar.exe.config
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\AGS Primar.exe
+C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\AGS Primar.pdb
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\Common.dll
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\Common.pdb
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.csproj.AssemblyReference.cache
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.csproj.CoreCompileInputs.cache
+C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.csproj.CopyComplete
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.exe
 C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.pdb
-C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\AGS Primar.exe.config
-C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\bin\Debug\AGS Primar.pdb
-C:\Users\Luka\Desktop\BezbednostTIM33\AGS Primar\obj\Debug\AGS Primar.csproj.CopyComplete
