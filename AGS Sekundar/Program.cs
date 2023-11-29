@@ -39,6 +39,14 @@ namespace AGS_Sekundar
 			Console.WriteLine($"{nameof(Servis2)} is started.");
 			Console.WriteLine("Press <enter> to stop service...");
 
+			using (Servis2 proxy = new Servis2(binding, address))
+			{
+				/// 1. Communication test
+				proxy.testMethod();
+				Console.WriteLine("TestCommunication() finished. Press <enter> to continue ...");
+				Console.ReadLine();
+			}
+
 			Console.ReadLine();
 
 		}
