@@ -14,6 +14,9 @@ namespace AGS_Sekundar
             throw new NotImplementedException();
         }
 
-     
+        public void WriteInFile(Alarm a)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
