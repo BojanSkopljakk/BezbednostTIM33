@@ -1,13 +1,3 @@
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Client.exe.config
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Client.exe
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Client.pdb
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Common.dll
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Common.pdb
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.csproj.AssemblyReference.cache
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.csproj.CopyComplete
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.exe
-C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.pdb
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Client.exe.config
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Client.exe
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Client.pdb
@@ -18,3 +8,13 @@ C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.csproj.CoreCompile
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.csproj.CopyComplete
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.exe
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Client.exe.config
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Client.exe
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Client.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Common.dll
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\bin\Debug\Common.pdb
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.csproj.AssemblyReference.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.csproj.CoreCompileInputs.cache
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.csproj.CopyComplete
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.exe
+C:\Users\bojan\source\repos\BezbednostTIM33\Client\obj\Debug\Client.pdb

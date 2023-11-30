@@ -17,7 +17,7 @@ namespace AGS_Primar
     {
         static void Main(string[] args)
         {
-            string srvCertCN = "wcfservice";
+           // string srvCertCN = "wcfservice";
             NetTcpBinding binding = new NetTcpBinding();
             string address = "net.tcp://localhost:9999/AGS_Primar";
 
@@ -28,7 +28,7 @@ namespace AGS_Primar
             ServiceHost host = new ServiceHost(typeof(Servis1));
 			host.AddServiceEndpoint(typeof(IAGSPrimar), binding, address);
 
-
+/*
             NetTcpBinding binding1 = new NetTcpBinding();
             string address1 = "net.tcp://localhost:9999/Sertifikat";
 
@@ -50,7 +50,7 @@ namespace AGS_Primar
             host1.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
 
             // podesavamo da se koristi MyAuthorizationManager umesto ugradjenog
-            host1.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();
+            host1.Authorization.ServiceAuthorizationManager = new CustomAuthorizationManager();*/
 
             // podesavamo custom polisu, odnosno nas objekat principala
             host.Authorization.PrincipalPermissionMode = PrincipalPermissionMode.Custom;
@@ -63,9 +63,16 @@ namespace AGS_Primar
             Console.WriteLine($"{nameof(Servis1)} is started.");
             Console.WriteLine("Press <enter> to stop service...");
 
-            host1.Open();
+            
+
+
+            sertifikat sertifikat1 = new sertifikat();
+
+            sertifikat1.konekcijaSaSekundarom();
+
+          /*  host1.Open();
             Console.WriteLine("Drugi servis is started.");
-            Console.WriteLine("Press <enter> to stop service...");
+            Console.WriteLine("Press <enter> to stop service...");*/
 
 
             Console.ReadLine();

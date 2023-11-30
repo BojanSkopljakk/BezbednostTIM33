@@ -15,29 +15,16 @@ namespace AGS_Sekundar
     {
         static void Main(string[] args)
         {
-			string srvCertCN = "wcfservice2";
+			/// Define the expected service certificate. It is required to establish cmmunication using certificates.
+			string srvCertCN = "wcfservice";
+
 			NetTcpBinding binding = new NetTcpBinding();
-			string address = "net.tcp://localhost:15001/Sertifikat";
-
-			binding.Security.Mode = SecurityMode.Transport;
 			binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
-			binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
 
-			ServiceHost host = new ServiceHost(typeof(Servis2));
-			host.AddServiceEndpoint(typeof(IAGSSekundar), binding, address);
-
-			host.Credentials.ClientCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.ChainTrust;
-
-			///If CA doesn't have a CRL associated, WCF blocks every client because it cannot be validated
-			host.Credentials.ClientCertificate.Authentication.RevocationMode = X509RevocationMode.NoCheck;
-
-			///Set appropriate service's certificate on the host. Use CertManager class to obtain the certificate based on the "srvCertCN"
-			host.Credentials.ServiceCertificate.Certificate = CertManager.GetCertificateFromStorage(StoreName.My, StoreLocation.LocalMachine, srvCertCN);
-
-			host.Open();
-
-			Console.WriteLine($"{nameof(Servis2)} is started.");
-			Console.WriteLine("Press <enter> to stop service...");
+			/// Use CertManager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
+			X509Certificate2 srvCert = CertManager.GetCertificateFromStorage(StoreName.TrustedPeople, StoreLocation.LocalMachine, srvCertCN);
+			EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:9999/Sertifikat"),
+									  new X509CertificateEndpointIdentity(srvCert));
 
 			using (Servis2 proxy = new Servis2(binding, address))
 			{

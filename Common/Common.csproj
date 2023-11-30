@@ -60,6 +60,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>RolesConfigFile.resx</DependentUpon>
     </Compile>
+    <Compile Include="SecurityException.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="RolesConfigFile.resx">
