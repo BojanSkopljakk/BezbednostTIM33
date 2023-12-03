@@ -8,6 +8,6 @@ namespace Common
 {
     public interface ITipRizika
     {
-        TipRizika IzracunajRizik();
+        //TipRizika IzracunajRizik();
     }
 }

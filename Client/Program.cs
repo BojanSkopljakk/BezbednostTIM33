@@ -67,7 +67,8 @@ namespace Client
                     {
                         case "1":
                             Console.WriteLine("unesite poruku\n");
-                            Alarm a = new Alarm(DateTime.Now, WindowsIdentity.GetCurrent().ToString(), Console.ReadLine());
+                            string temp = Console.ReadLine();
+                            Alarm a = new Alarm(DateTime.Now, WindowsIdentity.GetCurrent().ToString(), temp);
                             proxy.AddAlarm(a);
                             break;
 

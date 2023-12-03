@@ -21,7 +21,7 @@ namespace AGS_Primar
 
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "AlarmGenerator")]
+        //[PrincipalPermission(SecurityAction.Demand, Role = "AlarmGenerator")]
         public void AddAlarm(Alarm a)
         {
             ListaAlarma.listaAlarma.Add(a);

@@ -8,21 +8,22 @@ using System.Threading.Tasks;
 namespace Common
 {
 
+    //[DataContract]
+    //public enum TipRizika
+    //{
+    //    Low,
+    //    Medium,
+    //    High
+    //}
     [DataContract]
-    public enum TipRizika
-    {
-        Low,
-        Medium,
-        High
-    }
-    [DataContract]
-    public class Alarm : ITipRizika
+    public class Alarm
+        //: ITipRizika
     {
 
         private DateTime vremeGenerisanja;
         private string imeKlijenta;
         private string poruka;
-        private TipRizika tipRizika;
+        //private TipRizika tipRizika;
         public Alarm(DateTime vremeGenerisanja, string imeKlijenta, string poruka)
         {
             this.VremeGenerisanja = vremeGenerisanja;
@@ -37,21 +38,21 @@ namespace Common
         public string ImeKlijenta { get => imeKlijenta; set => imeKlijenta = value; }
         [DataMember]
         public string Poruka { get => poruka; set => poruka = value; }
-        [DataMember]
-        public TipRizika Rizik { get => tipRizika; set => tipRizika = value; }
+        //[DataMember]
+        //public TipRizika Rizik { get => tipRizika; set => tipRizika = value; }
 
 
-        public TipRizika IzracunajRizik()
-        {
-            Random random = new Random();
-            int num = random.Next(50);
-            if (num < 10)
-                return TipRizika.Low;
-            else if (num >= 10 && num < 40)
-                return TipRizika.Medium;
-            else
-                return TipRizika.High;
-        }
+        //public TipRizika IzracunajRizik()
+        //{
+        //    Random random = new Random();
+        //    int num = random.Next(50);
+        //    if (num < 10)
+        //        return TipRizika.Low;
+        //    else if (num >= 10 && num < 40)
+        //        return TipRizika.Medium;
+        //    else
+        //        return TipRizika.High;
+        //}
 
         //pravimo metodu koja će pretvoriti propertije u string!!
     }
