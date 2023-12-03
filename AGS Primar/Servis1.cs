@@ -11,7 +11,7 @@ using Common;
 
 namespace AGS_Primar
 {
-    public class Servis1 : IAGSPrimar
+    public class Servis1 :IDisposable, IAGSPrimar
     {
 
         [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
@@ -22,15 +22,15 @@ namespace AGS_Primar
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "AlarmGenerator")]
-        public void AddAlarm()
+        public void AddAlarm(Alarm a)
         {
-
+            ListaAlarma.listaAlarma.Add(a);
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
         public void DeleteAlarm()
         {
-
+            //ListaAlarma.listaAlarma.Remove();
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
@@ -39,6 +39,9 @@ namespace AGS_Primar
 
         }
 
-        
+        public void Dispose()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Common
     {
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
-        void AddAlarm();
+        void AddAlarm(Alarm a);
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void DeleteAlarm();

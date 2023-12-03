@@ -14,7 +14,11 @@ namespace Common
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void testMethod();
-        
+
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        void IspisNaKonzolu();
+
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void WriteInFile(Alarm a);

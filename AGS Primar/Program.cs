@@ -63,16 +63,13 @@ namespace AGS_Primar
             Console.WriteLine($"{nameof(Servis1)} is started.");
             Console.WriteLine("Press <enter> to stop service...");
 
-            
-
 
             sertifikat sertifikat1 = new sertifikat();
 
             sertifikat1.konekcijaSaSekundarom();
 
-          /*  host1.Open();
-            Console.WriteLine("Drugi servis is started.");
-            Console.WriteLine("Press <enter> to stop service...");*/
+            
+
 
 
             Console.ReadLine();

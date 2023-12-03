@@ -15,8 +15,7 @@ namespace AGS_Sekundar
 
         IAGSSekundar factory;
 
-        public Servis2(NetTcpBinding binding, EndpointAddress address)
-            : base(binding, address)
+        public Servis2(NetTcpBinding binding, EndpointAddress address) : base(binding, address)
         {
             string cltCertCN = "wcfservice2";
 
@@ -39,7 +38,12 @@ namespace AGS_Sekundar
         {
             throw new NotImplementedException();
         }
-
+        //stream reader koji ide lajnu po lajnu i parsira tekst u string i od tog stringa alarme
+        //SreamReader kad naleti na razmak zna da je sledeći properti alarma, kada je novi red onda je novi alarm
+        public void IspisNaKonzolu()
+        {
+            throw new NotImplementedException();
+        }
         public void Dispose()
         {
             if (factory != null)

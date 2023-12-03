@@ -15,18 +15,18 @@ namespace AGS_Sekundar
     {
         static void Main(string[] args)
         {
-			/// Define the expected service certificate. It is required to establish cmmunication using certificates.
-			string srvCertCN = "wcfservice";
+            /// Define the expected service certificate. It is required to establish cmmunication using certificates.
+            string srvCertCN = "wcfservice";
 
-			NetTcpBinding binding = new NetTcpBinding();
-			binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
+            NetTcpBinding binding = new NetTcpBinding();
+            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
 
-			/// Use CertManager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
-			X509Certificate2 srvCert = CertManager.GetCertificateFromStorage(StoreName.TrustedPeople, StoreLocation.LocalMachine, srvCertCN);
-			EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:9999/Sertifikat"),
-									  new X509CertificateEndpointIdentity(srvCert));
+            /// Use CertManager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
+            X509Certificate2 srvCert = CertManager.GetCertificateFromStorage(StoreName.TrustedPeople, StoreLocation.LocalMachine, srvCertCN);
+            EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:9999/Sertifikat"),
+                                      new X509CertificateEndpointIdentity(srvCert));
 
-			using (Servis2 proxy = new Servis2(binding, address))
+            using (Servis2 proxy = new Servis2(binding, address))
 			{
 				/// 1. Communication test
 				proxy.testMethod();

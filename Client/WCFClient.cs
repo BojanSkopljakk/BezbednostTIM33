@@ -17,8 +17,7 @@ namespace Client
 
 		IAGSPrimar factory;
 		
-		public WCFClient(NetTcpBinding binding, string address)
-			: base(binding, address)
+		public WCFClient(NetTcpBinding binding, string address) : base(binding, address)
 		{
 
 			factory = this.CreateChannel();
@@ -39,12 +38,12 @@ namespace Client
 
 
 
-        public void AddAlarm()
-        {
-            throw new NotImplementedException();
-        }
+		public void AddAlarm(Alarm a)
+		{
+			factory.AddAlarm(a);
+		}
 
-        public void DeleteAlarm()
+		public void DeleteAlarm()
         {
             throw new NotImplementedException();
         }
@@ -64,5 +63,7 @@ namespace Client
 
 			this.Close();
 		}
-	}
+
+
+    }
 }

@@ -7,6 +7,7 @@ using System.ServiceModel;
 using Common;
 using System.Security.Principal;
 using System.Security.Cryptography.X509Certificates;
+using AGS_Primar;
 
 namespace Client
 {
@@ -50,9 +51,43 @@ namespace Client
             using (WCFClient proxy = new WCFClient(binding, address))
             {
                 /// 1. Communication test
-                proxy.Ispisi();
-                Console.WriteLine("TestCommunication() finished. Press <enter> to continue ...");
-                Console.ReadLine();
+                //proxy.Ispisi();
+                //Console.WriteLine("TestCommunication() finished. Press <enter> to continue ...");
+                Console.WriteLine("1. AddAlarm\n");
+                Console.WriteLine("2. DeleteAlarm\n");
+                Console.WriteLine("3. AcceptDelete\n");
+                Console.WriteLine("4. Ispisi\n");
+                string opcija;
+                
+                while (true)
+                {
+                    opcija = Console.ReadLine();
+
+                    switch (opcija)
+                    {
+                        case "1":
+                            Console.WriteLine("unesite poruku\n");
+                            Alarm a = new Alarm(DateTime.Now, WindowsIdentity.GetCurrent().ToString(), Console.ReadLine());
+                            proxy.AddAlarm(a);
+                            break;
+
+                        case "2":
+                            proxy.DeleteAlarm();
+                            break;
+
+                        case "3":
+                            proxy.AcceptDelete();
+                            break;
+
+                        case "4":
+                            proxy.Ispisi();
+                            break;
+
+                        default:
+                            Console.WriteLine("pogrešan unos");
+                            break;
+                    }
+                }
             }
 
         }
