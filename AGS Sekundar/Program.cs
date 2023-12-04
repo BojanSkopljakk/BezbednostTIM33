@@ -8,6 +8,7 @@ using System.Security.Principal;
 using System.ServiceModel.Security;
 using System.Security.Cryptography.X509Certificates;
 using Common;
+using System.Threading;
 
 namespace AGS_Sekundar
 {
@@ -23,19 +24,27 @@ namespace AGS_Sekundar
 
             /// Use CertManager class to obtain the certificate based on the "srvCertCN" representing the expected service identity.
             X509Certificate2 srvCert = CertManager.GetCertificateFromStorage(StoreName.TrustedPeople, StoreLocation.LocalMachine, srvCertCN);
-            EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:9999/Sertifikat"),
+            EndpointAddress address = new EndpointAddress(new Uri("net.tcp://localhost:9998/Sertifikat"),
                                       new X509CertificateEndpointIdentity(srvCert));
-
+            ReplikatorEndpointSekundar replikatorEndpointSekundar = new ReplikatorEndpointSekundar();
+            replikatorEndpointSekundar.KonekcijaSaReplikatoromSekundar();
             using (Servis2 proxy = new Servis2(binding, address))
 			{
 				/// 1. Communication test
 				proxy.testMethod();
 				Console.WriteLine("TestCommunication() finished. Press <enter> to continue ...");
-				Console.ReadLine();
+                //while (true)
+                //{
+                //    if (KopijaListe.listaAlarma2.Count() > 0)
+                //    {
+                //        proxy.IspisNaKonzolu();
+                //    }
+                //    Thread.Sleep(5000);
+                //}
+
+
+                Console.ReadLine();
 			}
-
-			Console.ReadLine();
-
 		}
     }
 }

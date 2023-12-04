@@ -13,20 +13,13 @@ namespace Replikator
     {
         static void Main(string[] args)
         {
-            //bool isFirstTime = true;
+            bool isFirstTime = true;
             DateTime time = DateTime.Now;
-
-            //ServiceHost host = new ServiceHost(typeof(SecurityService));
-            //host.AddServiceEndpoint(typeof(ISecurityService), binding, address);
-
-            NetTcpBinding binding = new NetTcpBinding();
-
-            binding.Security.Mode = SecurityMode.Transport;
-            binding.Security.Transport.ClientCredentialType = TcpClientCredentialType.Windows;
-            binding.Security.Transport.ProtectionLevel = System.Net.Security.ProtectionLevel.EncryptAndSign;
+            
 
             while (true)
             {
+                Console.WriteLine("nije zakucao");
                 try
                 {
                     ChannelFactory<IAGSPrimar> cfIzvor = new ChannelFactory<IAGSPrimar>("Izvor");
@@ -34,20 +27,20 @@ namespace Replikator
                     IAGSPrimar kIzvor = cfIzvor.CreateChannel();
                     IAGSSekundar kOdrediste = cfOdrediste.CreateChannel();
 
-                    
 
-                    //if (isFirstTime)
-                    //{
-                    //    kOdrediste.UpisLica(kIzvor.SpisakLica()); // kad prvi put radimo replikaciju moramo da pokupimo sve sto se tamo nalazi
-                    //    time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
-                    //    isFirstTime = false;
-                    //}
-                    //else
-                    //{
-                    //    List<FizickoLice> lica = kIzvor.OcitavanjeLica(time);
-                    //    time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
-                    //    kOdrediste.UpisLica(lica);
-                    //}
+
+                    if (isFirstTime)
+                    {
+                        kOdrediste.UpisAlarma(kIzvor.GetLista()); // kad prvi put radimo replikaciju moramo da pokupimo sve sto se tamo nalazi
+                        time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
+                        isFirstTime = false;
+                    }
+                    else
+                    {
+                        List<Alarm> alarmi = kIzvor.OcitavanjeAlarma(time);
+                        time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
+                        kOdrediste.UpisAlarma(alarmi);
+                    }
 
                     Thread.Sleep(5000);
                 }
@@ -59,6 +52,8 @@ namespace Replikator
                 {
                     Console.WriteLine(e.Message);
                 }
+
+                
             }
         }
     }

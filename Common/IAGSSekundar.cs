@@ -22,5 +22,9 @@ namespace Common
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void WriteInFile(Alarm a);
+
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        void UpisAlarma(List<Alarm> a);
     }
 }

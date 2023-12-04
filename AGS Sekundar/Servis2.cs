@@ -10,7 +10,7 @@ using Common;
 
 namespace AGS_Sekundar
 {
-    class Servis2 : ChannelFactory<IAGSSekundar>, IAGSSekundar, IDisposable
+    public class Servis2 : ChannelFactory<IAGSSekundar>, IAGSSekundar, IDisposable
     {
 
         IAGSSekundar factory;
@@ -29,6 +29,9 @@ namespace AGS_Sekundar
             factory = this.CreateChannel();
 
         }
+
+        public Servis2() { }
+
         public void testMethod()
         {
             Console.WriteLine("radi");
@@ -42,7 +45,16 @@ namespace AGS_Sekundar
         //SreamReader kad naleti na razmak zna da je sledeći properti alarma, kada je novi red onda je novi alarm
         public void IspisNaKonzolu()
         {
-            throw new NotImplementedException();
+            Console.WriteLine("--------------------------------------------");
+            foreach(Alarm a in KopijaListe.listaAlarma2)
+            {
+                Console.WriteLine(a.Id);
+                Console.WriteLine(a.VremeGenerisanja);
+                Console.WriteLine(a.ImeKlijenta);
+                Console.WriteLine(a.Poruka);
+                Console.WriteLine(a.Rizik);
+            }
+            Console.WriteLine("--------------------------------------------");
         }
         public void Dispose()
         {
@@ -54,5 +66,18 @@ namespace AGS_Sekundar
             this.Close();
         }
 
+        public void UpisAlarma(List<Alarm> alarmi)
+        {
+            Console.WriteLine(DateTime.Now.ToString() + " - Upis alarma iniciran.");
+
+            foreach (Alarm a in alarmi)
+            {
+                //KopijaListe.listaAlarma2[a.Id] = a; // istovremeno radi i dodavanje i azuriranje
+                KopijaListe.listaAlarma2.Add(a);
+            }
+
+            Console.WriteLine($"Replicirano {alarmi.Count} podataka ");
+            IspisNaKonzolu();
+        }
     }
 }

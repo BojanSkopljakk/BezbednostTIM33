@@ -16,7 +16,7 @@ namespace AGS_Primar
         {
             string srvCertCN = "wcfservice";
             NetTcpBinding binding1 = new NetTcpBinding();
-            string address1 = "net.tcp://localhost:9999/Sertifikat";
+            string address1 = "net.tcp://localhost:9998/Sertifikat";
 
             binding1.Security.Mode = SecurityMode.Transport;
             binding1.Security.Transport.ClientCredentialType = TcpClientCredentialType.Certificate;
@@ -39,7 +39,7 @@ namespace AGS_Primar
 
             host1.Open();
 
-            Console.WriteLine("Uspesno 100%");
+            Console.WriteLine("Otvorena konekcija sa sekundarom");
         }
     }
 }

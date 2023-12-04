@@ -24,5 +24,12 @@ namespace Common
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void Ispisi();
+
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        List<Alarm> GetLista();
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        List<Alarm> OcitavanjeAlarma(DateTime vremeGenerisanja);
     }
 }

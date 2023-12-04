@@ -65,9 +65,20 @@ namespace Client
                     switch (opcija)
                     {
                         case "1":
+                            
+
+                            //Alarm a = new Alarm(DateTime.Now, System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString(), temp);
+
+                            Alarm a = new Alarm();
+
+                            Console.WriteLine("unesite id\n");
+                            a.Id = int.Parse(Console.ReadLine());
+                            a.Rizik = a.IzracunajRizik();
+                            a.ImeKlijenta = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
                             Console.WriteLine("unesite poruku\n");
-                            string temp = Console.ReadLine();
-                            Alarm a = new Alarm(DateTime.Now, System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString(), temp);
+                            a.Poruka = Console.ReadLine();
+                            a.VremeGenerisanja = DateTime.Now;
+
                             proxy.AddAlarm(a);
                             Console.WriteLine("dodat alarm\n");
                             break;

@@ -41,9 +41,11 @@ namespace Client
 		public void AddAlarm(Alarm a)
 		{
 			factory.AddAlarm(a);
+			Console.WriteLine(a.Id);
 			Console.WriteLine(a.VremeGenerisanja.ToString());
 			Console.WriteLine(a.Poruka);
 			Console.WriteLine(a.ImeKlijenta);
+            Console.WriteLine(a.Rizik.ToString());
 		}
 
 		public void DeleteAlarm()
@@ -67,6 +69,14 @@ namespace Client
 			this.Close();
 		}
 
+        public List<Alarm> GetLista()
+        {
+            throw new NotImplementedException();
+        }
 
+        public List<Alarm> OcitavanjeAlarma(DateTime vremeGenerisanja)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

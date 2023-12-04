@@ -68,9 +68,10 @@ namespace AGS_Primar
 
             sertifikat1.konekcijaSaSekundarom();
 
-            
 
+            ReplikatorEndpoint replikatorEndpoint = new ReplikatorEndpoint();
 
+            replikatorEndpoint.KonekcijaSaReplikatorom();
 
             Console.ReadLine();
 

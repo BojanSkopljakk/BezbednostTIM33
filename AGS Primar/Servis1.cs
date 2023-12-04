@@ -14,7 +14,7 @@ namespace AGS_Primar
     public class Servis1 : IAGSPrimar
     {
 
-        //[PrincipalPermission(SecurityAction.Demand, Role = "Read")]
+        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
         public void Ispisi()
         {
             Console.WriteLine("Communication established.");
@@ -37,6 +37,28 @@ namespace AGS_Primar
         public void AcceptDelete()
         {
 
+        }
+
+        public List<Alarm> GetLista()
+        {
+            return ListaAlarma.listaAlarma;
+        }
+
+        public List<Alarm> OcitavanjeAlarma(DateTime vremeGenerisanja)
+        {
+            Console.WriteLine(DateTime.Now.ToString() + " - Ocitavanje alarma inicirano.");
+
+            List<Alarm> alarmi = new List<Alarm>();
+
+            foreach (Alarm a in ListaAlarma.listaAlarma)
+            {
+                if (a.VremeGenerisanja >= vremeGenerisanja)
+                {
+                    alarmi.Add(a);
+                }
+            }
+
+            return alarmi;
         }
     }
 }
