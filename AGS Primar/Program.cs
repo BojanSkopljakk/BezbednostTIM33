@@ -74,6 +74,18 @@ namespace AGS_Primar
 
             Console.ReadLine();
 
+            Dispose();
+
+            void Dispose()
+            {
+                if (host != null)
+                {
+                    host = null;
+                }
+
+                host.Close();
+            }
+
         }
     }
 }

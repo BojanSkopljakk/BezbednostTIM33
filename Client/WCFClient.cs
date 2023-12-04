@@ -41,6 +41,9 @@ namespace Client
 		public void AddAlarm(Alarm a)
 		{
 			factory.AddAlarm(a);
+			Console.WriteLine(a.VremeGenerisanja.ToString());
+			Console.WriteLine(a.Poruka);
+			Console.WriteLine(a.ImeKlijenta);
 		}
 
 		public void DeleteAlarm()

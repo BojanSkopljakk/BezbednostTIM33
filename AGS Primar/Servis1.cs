@@ -11,10 +11,10 @@ using Common;
 
 namespace AGS_Primar
 {
-    public class Servis1 :IDisposable, IAGSPrimar
+    public class Servis1 : IAGSPrimar
     {
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
+        //[PrincipalPermission(SecurityAction.Demand, Role = "Read")]
         public void Ispisi()
         {
             Console.WriteLine("Communication established.");
@@ -37,11 +37,6 @@ namespace AGS_Primar
         public void AcceptDelete()
         {
 
-        }
-
-        public void Dispose()
-        {
-            throw new NotImplementedException();
         }
     }
 }

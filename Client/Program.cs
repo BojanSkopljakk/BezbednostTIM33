@@ -7,7 +7,6 @@ using System.ServiceModel;
 using Common;
 using System.Security.Principal;
 using System.Security.Cryptography.X509Certificates;
-using AGS_Primar;
 
 namespace Client
 {
@@ -68,8 +67,9 @@ namespace Client
                         case "1":
                             Console.WriteLine("unesite poruku\n");
                             string temp = Console.ReadLine();
-                            Alarm a = new Alarm(DateTime.Now, WindowsIdentity.GetCurrent().ToString(), temp);
+                            Alarm a = new Alarm(DateTime.Now, System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString(), temp);
                             proxy.AddAlarm(a);
+                            Console.WriteLine("dodat alarm\n");
                             break;
 
                         case "2":

@@ -12,10 +12,7 @@ C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.csproj.CoreCompile
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Client.exe.config
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Client.exe
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Client.pdb
-C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\AGS Primar.exe
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Common.dll
-C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\AGS Primar.pdb
-C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\AGS Primar.exe.config
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\bin\Debug\Common.pdb
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.csproj.AssemblyReference.cache
 C:\Users\Luka\Desktop\BezbednostTIM33\Client\obj\Debug\Client.csproj.CopyComplete

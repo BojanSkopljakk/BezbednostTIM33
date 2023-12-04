@@ -53,10 +53,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AGS Primar\AGS Primar.csproj">
-      <Project>{99A87E5F-7499-45D5-AFA5-922C9E93C4A5}</Project>
-      <Name>AGS Primar</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{aeaa28df-3cf7-4ba3-944a-4321e4b9b3cd}</Project>
       <Name>Common</Name>
