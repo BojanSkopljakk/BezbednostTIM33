@@ -48,11 +48,12 @@ namespace AGS_Sekundar
             Console.WriteLine("--------------------------------------------");
             foreach(Alarm a in KopijaListe.listaAlarma2)
             {
-                Console.WriteLine(a.Id);
-                Console.WriteLine(a.VremeGenerisanja);
-                Console.WriteLine(a.ImeKlijenta);
-                Console.WriteLine(a.Poruka);
-                Console.WriteLine(a.Rizik);
+                Console.WriteLine("Id: "+a.Id);
+                Console.WriteLine("Vreme Generisanja: "+a.VremeGenerisanja);
+                Console.WriteLine("Ime klijenta: "+a.ImeKlijenta);
+                Console.WriteLine("Poruka: "+a.Poruka);
+                Console.WriteLine("Rizik: "+a.Rizik);
+                Console.WriteLine("");
             }
             Console.WriteLine("--------------------------------------------");
         }

@@ -71,16 +71,17 @@ namespace Client
 
                             Alarm a = new Alarm();
 
-                            Console.WriteLine("unesite id\n");
+                            Console.WriteLine("unesite id: ");
                             a.Id = int.Parse(Console.ReadLine());
                             a.Rizik = a.IzracunajRizik();
                             a.ImeKlijenta = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
-                            Console.WriteLine("unesite poruku\n");
+                            Console.WriteLine("unesite poruku: ");
                             a.Poruka = Console.ReadLine();
+                            Console.WriteLine("");
                             a.VremeGenerisanja = DateTime.Now;
 
                             proxy.AddAlarm(a);
-                            Console.WriteLine("dodat alarm\n");
+                            Console.WriteLine("\ndodat alarm\n");
                             break;
 
                         case "2":
