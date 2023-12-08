@@ -31,15 +31,18 @@ namespace Replikator
 
                     if (isFirstTime)
                     {
+                        Audit.ReplicationInitiated();
                         kOdrediste.UpisAlarma(kIzvor.GetLista()); // kad prvi put radimo replikaciju moramo da pokupimo sve sto se tamo nalazi
                         time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
                         isFirstTime = false;
                     }
                     else
                     {
+                        Audit.ReplicationInitiated();
                         List<Alarm> alarmi = kIzvor.OcitavanjeAlarma(time);
                         time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
                         kOdrediste.UpisAlarma(alarmi);
+                        Audit.ReplicationSuccess(alarmi);
                     }
 
                     Thread.Sleep(5000);
