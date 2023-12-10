@@ -31,5 +31,9 @@ namespace Common
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         List<Alarm> OcitavanjeAlarma(DateTime vremeGenerisanja);
+
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        void IsprazniBuffer();
     }
 }

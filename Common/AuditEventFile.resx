@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AlarmReplicationFailure" xml:space="preserve">
-    <value />
+    <value>Alarm failed to replicate because of {1}.</value>
   </data>
   <data name="AlarmReplicationInitiated" xml:space="preserve">
-    <value />
+    <value>Replication successfully initiated.</value>
   </data>
   <data name="AlarmReplicationSuccess" xml:space="preserve">
-    <value />
+    <value>Alarms {0} successfully replicated.</value>
   </data>
 </root>

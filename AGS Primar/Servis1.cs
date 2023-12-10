@@ -60,5 +60,10 @@ namespace AGS_Primar
 
             return alarmi;
         }
+
+        public void IsprazniBuffer()
+        {
+            ListaAlarma.listaAlarma.Clear();
+        }
     }
 }

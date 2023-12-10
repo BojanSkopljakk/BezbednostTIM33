@@ -61,7 +61,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Alarm failed to replicate because of {1}..
         /// </summary>
         internal static string AlarmReplicationFailure {
             get {
@@ -70,7 +70,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Replication successfully initiated..
         /// </summary>
         internal static string AlarmReplicationInitiated {
             get {
@@ -79,7 +79,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to Alarms {0} successfully replicated..
         /// </summary>
         internal static string AlarmReplicationSuccess {
             get {

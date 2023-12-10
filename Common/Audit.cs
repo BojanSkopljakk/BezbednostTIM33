@@ -17,11 +17,11 @@ namespace Common
             }
         }
 
-        public static void ReplicationFailure(Alarm alarm, string reason = "")
+        public static void ReplicationFailure(string reason = "")
         {
             using (var customLog = EventLogFactory.CreateNew())
             {
-                string message = string.Format(AuditEvents.AlarmReplicationFailure, alarm, reason);
+                string message = string.Format(AuditEvents.AlarmReplicationFailure, reason);
                 customLog.WriteEntry(message, EventLogEntryType.Error);
             }
         }

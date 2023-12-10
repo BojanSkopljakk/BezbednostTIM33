@@ -13,13 +13,14 @@ namespace Replikator
     {
         static void Main(string[] args)
         {
-            bool isFirstTime = true;
+            //bool isFirstTime = true;
             DateTime time = DateTime.Now;
-            
+            Console.WriteLine("Inicijalizovan Replikator");
 
             while (true)
             {
-                Console.WriteLine("nije zakucao");
+                
+                
                 try
                 {
                     ChannelFactory<IAGSPrimar> cfIzvor = new ChannelFactory<IAGSPrimar>("Izvor");
@@ -27,32 +28,47 @@ namespace Replikator
                     IAGSPrimar kIzvor = cfIzvor.CreateChannel();
                     IAGSSekundar kOdrediste = cfOdrediste.CreateChannel();
 
+                    Audit.ReplicationInitiated();
 
+                    //if (isFirstTime)
+                    //{
+                    //    List<Alarm> temp = kIzvor.GetLista();
+                    //    if(temp.Count == 3)
+                    //    {
+                    //        kOdrediste.UpisAlarma(temp);
+                    //        time = DateTime.Now;
+                    //        isFirstTime = false;
+                    //    }
 
-                    if (isFirstTime)
+                    //}
+                    //else
+                    //{
+                    //    List<Alarm> alarmi = kIzvor.OcitavanjeAlarma(time);
+                    //    time = DateTime.Now;
+                    //    List<Alarm> temp = kIzvor.GetLista();
+                    //    if(temp.Count == 3)
+                    //    {
+                    //        kOdrediste.UpisAlarma(alarmi);
+                    //        Audit.ReplicationSuccess(alarmi);
+                    //    }
+
+                    //}
+                    List<Alarm> temp = kIzvor.GetLista();
+                    if (temp.Count == 3)
                     {
-                        Audit.ReplicationInitiated();
-                        kOdrediste.UpisAlarma(kIzvor.GetLista()); // kad prvi put radimo replikaciju moramo da pokupimo sve sto se tamo nalazi
-                        time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
-                        isFirstTime = false;
+                        kOdrediste.UpisAlarma(temp);
+                        Audit.ReplicationSuccess(temp);
+                        time = DateTime.Now;
+                        kIzvor.IsprazniBuffer();
+                        Console.WriteLine("Izvršena Replikacija");
                     }
-                    else
-                    {
-                        Audit.ReplicationInitiated();
-                        List<Alarm> alarmi = kIzvor.OcitavanjeAlarma(time);
-                        time = DateTime.Now; // moramo da zabelezimo vreme kada smo poslednji put odradili izmenu
-                        kOdrediste.UpisAlarma(alarmi);
-                        Audit.ReplicationSuccess(alarmi);
-                    }
+
 
                     Thread.Sleep(5000);
                 }
-                //catch (FaultException ex)
-                //{
-                //    Console.WriteLine(ex.Message);
-                //}
                 catch (Exception e)
                 {
+                    Audit.ReplicationFailure(e.Message);
                     Console.WriteLine(e.Message);
                 }
 
