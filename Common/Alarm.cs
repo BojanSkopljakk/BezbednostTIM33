@@ -45,8 +45,19 @@ namespace Common
         [DataMember]
         public int Id { get => id; set => id = value; }
 
-        public TipRizika IzracunajRizik()
+        public TipRizika IzracunajRizik(string porukica)
         {
+
+            int duzina = porukica.Length;
+
+            if (duzina <= 5)
+                return TipRizika.Low;
+            else if (duzina > 5 && duzina <= 10)
+                return TipRizika.Medium;
+            else
+                return TipRizika.High;
+
+            /*
             Random random = new Random();
             int num = random.Next(50);
             if (num < 10)
@@ -54,7 +65,7 @@ namespace Common
             else if (num >= 10 && num < 40)
                 return TipRizika.Medium;
             else
-                return TipRizika.High;
+                return TipRizika.High;*/
         }
 
         //pravimo metodu koja će pretvoriti propertije u string!!

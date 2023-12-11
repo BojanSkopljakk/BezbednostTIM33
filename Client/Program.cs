@@ -73,10 +73,11 @@ namespace Client
 
                             Console.WriteLine("unesite id: ");
                             a.Id = int.Parse(Console.ReadLine());
-                            a.Rizik = a.IzracunajRizik();
+                            
                             a.ImeKlijenta = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
                             Console.WriteLine("unesite poruku: ");
                             a.Poruka = Console.ReadLine();
+                            a.Rizik = a.IzracunajRizik(a.Poruka);
                             Console.WriteLine("");
                             a.VremeGenerisanja = DateTime.Now;
 
