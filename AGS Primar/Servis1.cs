@@ -27,10 +27,28 @@ namespace AGS_Primar
             ListaAlarma.listaAlarma.Add(a);
         }
 
-        [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
-        public void DeleteAlarm()
+        //[PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
+        public void DeleteAlarm(int id)
         {
-            //ListaAlarma.listaAlarma.Remove();
+            bool postoji = false;
+            foreach(Alarm a in ListaAlarma.listaAlarma)
+            {
+                if (a.Id == id)
+                {
+                    ListaAlarma.listaAlarma.Remove(a);
+                    postoji = true;
+                    break;
+                }
+            }
+            if (postoji)
+            {
+                Console.WriteLine("Uspešno izbrisan\n");
+            }
+            else
+            {
+                Console.WriteLine("Alarm ne postoji\n");
+            }
+            
         }
 
         [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
@@ -64,6 +82,11 @@ namespace AGS_Primar
         public void IsprazniBuffer()
         {
             ListaAlarma.listaAlarma.Clear();
+        }
+
+        public int DuzinaListe()
+        {
+            return ListaAlarma.listaAlarma.Count();
         }
     }
 }

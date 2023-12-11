@@ -86,7 +86,10 @@ namespace Client
                             break;
 
                         case "2":
-                            proxy.DeleteAlarm();
+                            Console.WriteLine("Unesite id za brisanje: \n");
+                            int temp = int.Parse(Console.ReadLine());
+                            
+                            proxy.DeleteAlarm(temp);
                             break;
 
                         case "3":

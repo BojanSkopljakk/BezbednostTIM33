@@ -16,7 +16,7 @@ namespace Common
         void AddAlarm(Alarm a);
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
-        void DeleteAlarm();
+        void DeleteAlarm(int id);
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void AcceptDelete();
@@ -35,5 +35,9 @@ namespace Common
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
         void IsprazniBuffer();
+
+        [OperationContract]
+        [FaultContract(typeof(SecurityException))]
+        int DuzinaListe();
     }
 }

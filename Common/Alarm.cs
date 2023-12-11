@@ -11,7 +11,7 @@ namespace Common
     [DataContract]
     public enum TipRizika
     {
-        [EnumMember] Low, [EnumMember] Medium, [EnumMember] High
+        [EnumMember] VeryLow, [EnumMember] Low, [EnumMember] Medium, [EnumMember] High, [EnumMember] VeryHigh
     }
     [DataContract]
     public class Alarm
@@ -51,11 +51,15 @@ namespace Common
             int duzina = porukica.Length;
 
             if (duzina <= 5)
-                return TipRizika.Low;
+                return TipRizika.VeryLow;
             else if (duzina > 5 && duzina <= 10)
+                return TipRizika.Low;
+            else if (duzina > 10 && duzina <= 15)
                 return TipRizika.Medium;
-            else
+            else if (duzina > 15 && duzina <= 20)
                 return TipRizika.High;
+            else
+                return TipRizika.VeryHigh;
 
             /*
             Random random = new Random();

@@ -48,9 +48,9 @@ namespace Client
             Console.WriteLine(a.Rizik.ToString());
 		}
 
-		public void DeleteAlarm()
+		public void DeleteAlarm(int id)
         {
-            throw new NotImplementedException();
+			factory.DeleteAlarm(id);
         }
 
         public void AcceptDelete()
@@ -80,6 +80,11 @@ namespace Client
         }
 
         public void IsprazniBuffer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public int DuzinaListe()
         {
             throw new NotImplementedException();
         }

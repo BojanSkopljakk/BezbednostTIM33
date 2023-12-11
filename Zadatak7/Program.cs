@@ -16,7 +16,7 @@ namespace Replikator
             //bool isFirstTime = true;
             DateTime time = DateTime.Now;
             Console.WriteLine("Inicijalizovan Replikator");
-
+            Audit.ReplicationInitiated();
             while (true)
             {
                 
@@ -28,7 +28,7 @@ namespace Replikator
                     IAGSPrimar kIzvor = cfIzvor.CreateChannel();
                     IAGSSekundar kOdrediste = cfOdrediste.CreateChannel();
 
-                    Audit.ReplicationInitiated();
+                    //Audit.ReplicationInitiated();
 
                     //if (isFirstTime)
                     //{
@@ -53,9 +53,10 @@ namespace Replikator
                     //    }
 
                     //}
-                    List<Alarm> temp = kIzvor.GetLista();
-                    if (temp.Count == 3)
+
+                    if (kIzvor.DuzinaListe() == 3)
                     {
+                        List<Alarm> temp = kIzvor.GetLista();
                         kOdrediste.UpisAlarma(temp);
                         Audit.ReplicationSuccess(temp);
                         time = DateTime.Now;

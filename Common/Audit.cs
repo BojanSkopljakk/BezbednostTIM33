@@ -8,11 +8,18 @@ namespace Common
 {
     public class Audit : IDisposable
     {
-        public static void ReplicationSuccess(List<Alarm> alarm)
+        public static void ReplicationSuccess(List<Alarm> alarmi)
         {
             using (var customLog = EventLogFactory.CreateNew())
             {
-                string message = string.Format(AuditEvents.AlarmReplicationSuccess, alarm);
+                string temp = "";
+                foreach(Alarm a in alarmi)
+                {
+                    temp += a.Id.ToString() + " ";
+                }
+
+
+                string message = string.Format(AuditEvents.AlarmReplicationSuccess, temp);
                 customLog.WriteEntry(message, EventLogEntryType.Information);
             }
         }
