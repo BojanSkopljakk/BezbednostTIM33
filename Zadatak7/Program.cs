@@ -16,7 +16,7 @@ namespace Replikator
             //bool isFirstTime = true;
             DateTime time = DateTime.Now;
             Console.WriteLine("Inicijalizovan Replikator");
-            Audit.ReplicationInitiated();
+            
             while (true)
             {
                 
@@ -56,6 +56,7 @@ namespace Replikator
 
                     if (kIzvor.DuzinaListe() == 3)
                     {
+                        Audit.ReplicationInitiated();
                         List<Alarm> temp = kIzvor.GetLista();
                         kOdrediste.UpisAlarma(temp);
                         Audit.ReplicationSuccess(temp);
