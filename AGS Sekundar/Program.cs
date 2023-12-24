@@ -33,6 +33,36 @@ namespace AGS_Sekundar
 				/// 1. Communication test
 				proxy.testMethod();
 				Console.WriteLine("TestCommunication() finished. Press <enter> to continue ...");
+                int i = 0;
+                while (true)
+                {
+                    //if (KopijaListe.listaAlarma2.Count > i + 2)
+                    //{
+                    //    proxy.WriteInFile(KopijaListe.listaAlarma2[i]);
+                    //    proxy.WriteInFile(KopijaListe.listaAlarma2[i + 1]);
+                    //    proxy.WriteInFile(KopijaListe.listaAlarma2[i + 2]);
+                    //    i += 3;
+                    //}
+                    //else if (KopijaListe.listaAlarma2.Count > i + 1)
+                    //{
+                    //    proxy.WriteInFile(KopijaListe.listaAlarma2[i]);
+                    //    proxy.WriteInFile(KopijaListe.listaAlarma2[i + 1]);
+                    //    i += 2;
+                    //}
+                    //else if (KopijaListe.listaAlarma2.Count > i)
+                    //{
+                    //    proxy.WriteInFile(KopijaListe.listaAlarma2[i]);
+                    //    i += 1;
+                    //}
+
+                    if(KopijaListe.listaAlarma2.Count > i)
+                    {
+                        proxy.WriteInFile(KopijaListe.listaAlarma2[i]);
+                        i++;
+                    }
+
+                    Thread.Sleep(1000);
+                }
                 //while (true)
                 //{
                 //    if (KopijaListe.listaAlarma2.Count() > 0)
@@ -43,8 +73,8 @@ namespace AGS_Sekundar
                 //}
 
 
-                Console.ReadLine();
-			}
+                //Console.ReadLine();
+            }
 		}
     }
 }

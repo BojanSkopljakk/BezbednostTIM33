@@ -61,7 +61,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Read, AlarmGenerator, AlarmAdmin.
+        ///   Looks up a localized string similar to Read,AlarmGenerator,AlarmAdmin.
         /// </summary>
         internal static string Admin {
             get {
@@ -70,7 +70,7 @@ namespace Common {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Read, AlarmGenerator.
+        ///   Looks up a localized string similar to Read,AlarmGenerator.
         /// </summary>
         internal static string Generator {
             get {

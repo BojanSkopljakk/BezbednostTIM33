@@ -7,6 +7,7 @@ using System.ServiceModel;
 using Common;
 using System.Security.Principal;
 using System.Security.Cryptography.X509Certificates;
+using System.ServiceModel.Security;
 
 namespace Client
 {
@@ -80,8 +81,14 @@ namespace Client
                             a.Rizik = a.IzracunajRizik(a.Poruka);
                             Console.WriteLine("");
                             a.VremeGenerisanja = DateTime.Now;
-
-                            proxy.AddAlarm(a);
+                            try
+                            {
+                                proxy.AddAlarm(a);
+                            }
+                            catch(SecurityAccessDeniedException e)
+                            {
+                                Console.WriteLine(e.Message); 
+                            }
                             Console.WriteLine("\ndodat alarm\n");
                             break;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Principal;
@@ -39,7 +40,17 @@ namespace AGS_Sekundar
 
         public void WriteInFile(Alarm a)
         {
-            throw new NotImplementedException();
+            string filePath = @"C:\Users\Luka\Desktop\BezbednostTIM33\listaAlarma.txt";
+            string ime = a.ImeKlijenta;
+            string id = a.Id.ToString();
+            string datum = a.VremeGenerisanja.ToString();
+            string rizik = a.Rizik.ToString();
+            string poruka = a.Poruka;
+
+            using (StreamWriter writer = new StreamWriter(filePath,true))
+            {
+                writer.WriteLine($"{ime}, {id}, {datum}, {rizik}, {poruka}\n");   
+            }
         }
         //stream reader koji ide lajnu po lajnu i parsira tekst u string i od tog stringa alarme
         //SreamReader kad naleti na razmak zna da je sledeći properti alarma, kada je novi red onda je novi alarm

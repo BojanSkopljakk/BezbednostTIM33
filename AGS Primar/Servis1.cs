@@ -6,6 +6,7 @@ using System.Security.Permissions;
 using System.ServiceModel;
 using System.ServiceModel.Security;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Common;
 
@@ -21,13 +22,14 @@ namespace AGS_Primar
 
         }
 
-        //[PrincipalPermission(SecurityAction.Demand, Role = "AlarmGenerator")]
+        [PrincipalPermission(SecurityAction.Demand, Role = "AlarmGenerator")]
         public void AddAlarm(Alarm a)
         {
-            ListaAlarma.listaAlarma.Add(a);
+                Console.WriteLine("Uspešno izvršeno");
+                ListaAlarma.listaAlarma.Add(a);   
         }
 
-        //[PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
+        [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
         public void DeleteAlarm(int id)
         {
             bool postoji = false;
@@ -54,7 +56,13 @@ namespace AGS_Primar
         [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
         public void AcceptDelete()
         {
-
+            foreach(Alarm a in ListaAlarma.listaAlarma)
+            {
+                if(a.ImeKlijenta == System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString())
+                {
+                    DeleteAlarm(a.Id);
+                }
+            }
         }
 
         public List<Alarm> GetLista()
