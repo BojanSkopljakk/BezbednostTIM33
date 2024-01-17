@@ -18,7 +18,17 @@ namespace AGS_Primar
         [PrincipalPermission(SecurityAction.Demand, Role = "Read")]
         public void Ispisi()
         {
-            Console.WriteLine("Communication established.");
+            Console.WriteLine("--------------------------------------------");
+            foreach (Alarm a in ListaAlarma.listaAlarma)
+            {
+                Console.WriteLine("Id: " + a.Id);
+                Console.WriteLine("Vreme Generisanja: " + a.VremeGenerisanja);
+                Console.WriteLine("Ime klijenta: " + a.ImeKlijenta);
+                Console.WriteLine("Poruka: " + a.Poruka);
+                Console.WriteLine("Rizik: " + a.Rizik);
+                Console.WriteLine("");
+            }
+            Console.WriteLine("--------------------------------------------");
 
         }
 
@@ -53,14 +63,17 @@ namespace AGS_Primar
             
         }
 
+        //možda ne vata dobro ime??????!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         [PrincipalPermission(SecurityAction.Demand, Role = "AlarmAdmin")]
-        public void AcceptDelete()
+        public void AcceptDelete(string ime)
         {
-            foreach(Alarm a in ListaAlarma.listaAlarma)
+            //Console.WriteLine(System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString());
+            foreach (Alarm a in ListaAlarma.listaAlarma.ToList())
             {
-                if(a.ImeKlijenta == System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString())
+                if (a.ImeKlijenta == ime)
                 {
-                    DeleteAlarm(a.Id);
+                    ListaAlarma.listaAlarma.Remove(a);
                 }
             }
         }

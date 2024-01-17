@@ -100,7 +100,8 @@ namespace Client
                             break;
 
                         case "3":
-                            proxy.AcceptDelete();
+                            string ime = System.Security.Principal.WindowsIdentity.GetCurrent().Name.ToString();
+                            proxy.AcceptDelete(ime);
                             break;
 
                         case "4":

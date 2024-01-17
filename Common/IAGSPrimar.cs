@@ -19,7 +19,7 @@ namespace Common
         void DeleteAlarm(int id);
         [OperationContract]
         [FaultContract(typeof(SecurityException))]
-        void AcceptDelete();
+        void AcceptDelete(string ime);
 
         [OperationContract]
         [FaultContract(typeof(SecurityException))]

@@ -53,9 +53,9 @@ namespace Client
 			factory.DeleteAlarm(id);
         }
 
-        public void AcceptDelete()
+        public void AcceptDelete(string ime)
         {
-            throw new NotImplementedException();
+			factory.AcceptDelete(ime);
         }
 
 
